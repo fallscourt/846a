@@ -8,6 +8,48 @@ tag=a3b92a13241d
 .. contents:: 
 
 
+
+メモメモ フォルスコート
+==========================
+
+github.com/fallscourt/846a
+
+PID = komae237
+
+fallscourt/846a
+
+
+Github pages not linking to CSS
+
+Relative paths only work with server rendering, if you host on github pages that would be static hosting and thus would need to provide an absolute path starting with http:
+
+GitHub PagesでSphinxにCSSが適用されない!!
+
+GitHub Pagesにアップロードした時点で、サーバーとローカルではcssへのファイルパスを変更する必要があります。
+
+例えば、ローカル上のindex.htmlで以下のようにcssのファイルパスを指定し、ブラウザで開くと、一見、index.htmlにhttps://fallscourt.github.io/846a/_static/asabaster.cssが適用されているように見えます。
+
+<link rel=”stylesheet” href=”https://fallscourt.github.io/846a/_static/alabaster.css” type=”text/css” />
+
+しかし、これをこのままGithub Pagesにアップロードすると適用されません。
+
+Githube Pages上では、ファイルパスがローカルとは異なるるため以下のように指定する必要があります。
+
+<link rel=”stylesheet” href=”https://username.github.io/project_name/https://fallscourt.github.io/846a/_static/alabaster.css" type=”text/css” />
+
+最終的には、以下のようにURL（絶対パス=https://username.github.io/dipository_name/css_file_name）を指定したら、CSSを読み込んでくれるようになりました。
+
+問題箇所
+
+
+
+<link rel="stylesheet" href="https://kotaro666-dev.github.io/portfolio-demo/style.css"/
+
+何とかなったんだけど表示のお化粧がうまくいかない
+https://medium.com/@kotaro666_dev/github-pages%E3%81%ABcss%E3%81%8C%E5%85%A8%E3%81%8F%E5%8F%8D%E6%98%A0%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E5%95%8F%E9%A1%8C-af99015a4a82
+
+
+
 はじめに
 ==============
 
@@ -24,17 +66,39 @@ tag=a3b92a13241d
 
 調査しているシステムは以下の通り、順次増やします。
 
-特別項目、テンポラリーにちょっと入れておきます
-=========================================================
+以下、調査、その０
+=========================
+
+Github
+----------------
+
+いうまでもないですがコードを書くなら定番。
+
+共同作業で個別にファイルを直してアップロードでき、各々バージョン管理ができます。
+
+WEBもここに構築できます。
+
+
+https://prog-8.com/docs/github-pages
+
+
+https://github.com/features/copilot
+
+
+
+その１
+================================
 
 .. toctree:: 
     
     chatGPT_230326
 
 
+調査、その２
+==================
 
 Mattermost
-==================
+-------------------
 
     {230321}
     和朗先生のおすすめ。昨日、藤沢からの帰りがけに教えていただきました。
@@ -49,7 +113,7 @@ Mattermost
 
 
 Conflurence
-=====================
+------------------
 
     Conferenceではありません、スペル間違えやすい。
 
@@ -70,8 +134,10 @@ https://www.atlassian.com/software/confluence/use-cases/wiki?&aceid=&adposition=
 
 |
 
-Notion
-=============
+Notion 
+---------------
+
+（その１）と重複してますが
 
 急速に充実していて、個人事業主（若い人たち）には人気のシステムです。YouTubeに充実した（個人的感想）紹介があります。
 
@@ -83,17 +149,5 @@ Notion
 （Kinoshitaは、かなり前から、部分的な機能を使っています）
 
 |
-
-Github
-=============
-
-いうまでもないですがコードを書くなら定番。
-
-共同作業で個別にファイルを直してアップロードでき、各々バージョン管理ができます。
-
-WEBもここに構築できます。
-
-https://github.com/features/copilot
-
 
 

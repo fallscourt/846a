@@ -10,10 +10,10 @@
     <link rel="stylesheet" type="text/css" href="https://fallscourt.github.io/846a/_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="https://fallscourt.github.io/846a/_static/nature.css" />
     <script data-url_root="./" id="documentation_options" src="https://fallscourt.github.io/846a/_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/translations.js"></script>
+    <script src="https://fallscourt.github.io/846a/_static/jquery.js"></script>
+    <script src="https://fallscourt.github.io/846a/_static/underscore.js"></script>
+    <script src="https://fallscourt.github.io/846a/_static/doctools.js"></script>
+    <script src="https://fallscourt.github.io/846a/_static/translations.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
     <link rel="next" title="ちょっと、chatGPTに聞いてみた" href="chatGPT_230326.html" /> 
@@ -38,25 +38,54 @@
           <div class="body" role="main">
             
   <section id="id1">
-<h1><a class="toc-backref" href="#id5">ネットでチームプレイ</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<h1><a class="toc-backref" href="#id8">ネットでチームプレイ</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>tag=a3b92a13241d</p>
 <div class="contents topic" id="id2">
 <p class="topic-title">目次</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#id1" id="id5">ネットでチームプレイ</a></p>
+<li><p><a class="reference internal" href="#id1" id="id8">ネットでチームプレイ</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id3" id="id6">はじめに</a></p></li>
-<li><p><a class="reference internal" href="#id4" id="id7">特別項目、テンポラリーにちょっと入れておきます</a></p></li>
-<li><p><a class="reference internal" href="#mattermost" id="id8">Mattermost</a></p></li>
-<li><p><a class="reference internal" href="#conflurence" id="id9">Conflurence</a></p></li>
-<li><p><a class="reference internal" href="#notion" id="id10">Notion</a></p></li>
-<li><p><a class="reference internal" href="#github" id="id11">Github</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id9">メモメモ フォルスコート</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id10">はじめに</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id11">以下、調査、その０</a></p>
+<ul>
+<li><p><a class="reference internal" href="#github" id="id12">Github</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id6" id="id13">その１</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id14">調査、その２</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mattermost" id="id15">Mattermost</a></p></li>
+<li><p><a class="reference internal" href="#conflurence" id="id16">Conflurence</a></p></li>
+<li><p><a class="reference internal" href="#notion" id="id17">Notion</a></p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="id3">
-<h2><a class="toc-backref" href="#id6">はじめに</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">メモメモ フォルスコート</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>github.com/fallscourt/846a</p>
+<p>PID = komae237</p>
+<p>fallscourt/846a</p>
+<p>Github pages not linking to CSS</p>
+<p>Relative paths only work with server rendering, if you host on github pages that would be static hosting and thus would need to provide an absolute path starting with http:</p>
+<p>GitHub PagesでSphinxにCSSが適用されない!!</p>
+<p>GitHub Pagesにアップロードした時点で、サーバーとローカルではcssへのファイルパスを変更する必要があります。</p>
+<p>例えば、ローカル上のindex.htmlで以下のようにcssのファイルパスを指定し、ブラウザで開くと、一見、index.htmlにhttps://fallscourt.github.io/846a/_static/asabaster.cssが適用されているように見えます。</p>
+<p>&lt;link rel=”stylesheet” href=”https://fallscourt.github.io/846a/_static/alabaster.css” type=”text/css” /&gt;</p>
+<p>しかし、これをこのままGithub Pagesにアップロードすると適用されません。</p>
+<p>Githube Pages上では、ファイルパスがローカルとは異なるるため以下のように指定する必要があります。</p>
+<p>&lt;link rel=”stylesheet” href=”<a class="reference external" href="https://username.github.io/project_name/https://fallscourt.github.io/846a/_static/alabaster.css">https://username.github.io/project_name/https://fallscourt.github.io/846a/_static/alabaster.css</a>&quot; type=”text/css” /&gt;</p>
+<p>最終的には、以下のようにURL（絶対パス=https://username.github.io/dipository_name/css_file_name）を指定したら、CSSを読み込んでくれるようになりました。</p>
+<p>問題箇所</p>
+<p>&lt;link rel=&quot;stylesheet&quot; href=&quot;<a class="reference external" href="https://kotaro666-dev.github.io/portfolio-demo/style.css">https://kotaro666-dev.github.io/portfolio-demo/style.css</a>&quot;/</p>
+<p>何とかなったんだけど表示のお化粧がうまくいかない
+<a class="reference external" href="https://medium.com/&#64;kotaro666_dev/github-pages%E3%81%ABcss%E3%81%8C%E5%85%A8%E3%81%8F%E5%8F%8D%E6%98%A0%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E5%95%8F%E9%A1%8C-af99015a4a82">https://medium.com/&#64;kotaro666_dev/github-pages%E3%81%ABcss%E3%81%8C%E5%85%A8%E3%81%8F%E5%8F%8D%E6%98%A0%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E5%95%8F%E9%A1%8C-af99015a4a82</a></p>
+</section>
+<section id="id4">
+<h2><a class="toc-backref" href="#id10">はじめに</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>みなさま、このサイトを見ていただき、ありがとうございます。だんだん（民間の活動として）お金の流れる仕事ができるようになってきました。今後、迅速に、チームで分担して仕事しなければなりません。そこで、年齢の言った方には負担かもしれませんが（拒否感が在るかもしれませんが）、インターネットを最大限に活用します。</p>
 <p>情報の共有方法について、試行錯誤をしたいと希望します。</p>
 <p>ネットでは、いくつかの Cloud を用いたツールが有り、以下のようなものがあります。調査中です。</p>
@@ -66,8 +95,19 @@
 </div>
 <p>調査しているシステムは以下の通り、順次増やします。</p>
 </section>
-<section id="id4">
-<h2><a class="toc-backref" href="#id7">特別項目、テンポラリーにちょっと入れておきます</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id5">
+<h2><a class="toc-backref" href="#id11">以下、調査、その０</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="github">
+<h3><a class="toc-backref" href="#id12">Github</a><a class="headerlink" href="#github" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>いうまでもないですがコードを書くなら定番。</p>
+<p>共同作業で個別にファイルを直してアップロードでき、各々バージョン管理ができます。</p>
+<p>WEBもここに構築できます。</p>
+<p><a class="reference external" href="https://prog-8.com/docs/github-pages">https://prog-8.com/docs/github-pages</a></p>
+<p><a class="reference external" href="https://github.com/features/copilot">https://github.com/features/copilot</a></p>
+</section>
+</section>
+<section id="id6">
+<h2><a class="toc-backref" href="#id13">その１</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chatGPT_230326.html">ちょっと、chatGPTに聞いてみた</a><ul>
@@ -92,8 +132,10 @@
 </ul>
 </div>
 </section>
+<section id="id7">
+<h2><a class="toc-backref" href="#id14">調査、その２</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <section id="mattermost">
-<h2><a class="toc-backref" href="#id8">Mattermost</a><a class="headerlink" href="#mattermost" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3><a class="toc-backref" href="#id15">Mattermost</a><a class="headerlink" href="#mattermost" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <blockquote>
 <div><p>{230321}
 和朗先生のおすすめ。昨日、藤沢からの帰りがけに教えていただきました。</p>
@@ -103,7 +145,7 @@
 </div></blockquote>
 </section>
 <section id="conflurence">
-<h2><a class="toc-backref" href="#id9">Conflurence</a><a class="headerlink" href="#conflurence" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3><a class="toc-backref" href="#id16">Conflurence</a><a class="headerlink" href="#conflurence" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <blockquote>
 <div><p>Conferenceではありません、スペル間違えやすい。</p>
 <p>atlassian（オーストラリア）、が親会社。</p>
@@ -125,7 +167,8 @@
 </div>
 </section>
 <section id="notion">
-<h2><a class="toc-backref" href="#id10">Notion</a><a class="headerlink" href="#notion" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h3><a class="toc-backref" href="#id17">Notion</a><a class="headerlink" href="#notion" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>（その１）と重複してますが</p>
 <p>急速に充実していて、個人事業主（若い人たち）には人気のシステムです。YouTubeに充実した（個人的感想）紹介があります。</p>
 <dl class="simple">
 <dt>以下はAI（openAI,  chatGPT関係も（確認要））での新機能の導入</dt><dd><p><a class="reference external" href="https://www.notion.so/product/ai">https://www.notion.so/product/ai</a></p>
@@ -136,12 +179,6 @@
 <div class="line"><br /></div>
 </div>
 </section>
-<section id="github">
-<h2><a class="toc-backref" href="#id11">Github</a><a class="headerlink" href="#github" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>いうまでもないですがコードを書くなら定番。</p>
-<p>共同作業で個別にファイルを直してアップロードでき、各々バージョン管理ができます。</p>
-<p>WEBもここに構築できます。</p>
-<p><a class="reference external" href="https://github.com/features/copilot">https://github.com/features/copilot</a></p>
 </section>
 </section>
 
@@ -156,12 +193,19 @@
     <h3><a href="#">目次</a></h3>
     <ul>
 <li><a class="reference internal" href="#">ネットでチームプレイ</a><ul>
-<li><a class="reference internal" href="#id3">はじめに</a></li>
-<li><a class="reference internal" href="#id4">特別項目、テンポラリーにちょっと入れておきます</a></li>
+<li><a class="reference internal" href="#id3">メモメモ フォルスコート</a></li>
+<li><a class="reference internal" href="#id4">はじめに</a></li>
+<li><a class="reference internal" href="#id5">以下、調査、その０</a><ul>
+<li><a class="reference internal" href="#github">Github</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">その１</a></li>
+<li><a class="reference internal" href="#id7">調査、その２</a><ul>
 <li><a class="reference internal" href="#mattermost">Mattermost</a></li>
 <li><a class="reference internal" href="#conflurence">Conflurence</a></li>
 <li><a class="reference internal" href="#notion">Notion</a></li>
-<li><a class="reference internal" href="#github">Github</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
