@@ -5,12 +5,16 @@
 
 tag=a3b92a13241d
 
-.. contents:: 
 
-
-
-メモメモ フォルスコート
+メモメモ 
 ==========================
+
+練習用に
+--------------
+
+練習用に、 フォルスコート（Fallscourt）という アカウントを GitHubに登録した {230902} 。
+
+https://fallscourt.github.io/846a/
 
 github.com/fallscourt/846a
 
@@ -18,35 +22,113 @@ PID = komae237
 
 fallscourt/846a
 
+どうすればいいかどう直せばいいか
+-----------------------------------
 
-Github pages not linking to CSS
-
-Relative paths only work with server rendering, if you host on github pages that would be static hosting and thus would need to provide an absolute path starting with http:
-
-GitHub PagesでSphinxにCSSが適用されない!!
-
-GitHub Pagesにアップロードした時点で、サーバーとローカルではcssへのファイルパスを変更する必要があります。
-
-例えば、ローカル上のindex.htmlで以下のようにcssのファイルパスを指定し、ブラウザで開くと、一見、index.htmlにhttps://fallscourt.github.io/846a/_static/asabaster.cssが適用されているように見えます。
-
-<link rel=”stylesheet” href=”https://fallscourt.github.io/846a/_static/alabaster.css” type=”text/css” />
-
-しかし、これをこのままGithub Pagesにアップロードすると適用されません。
-
-Githube Pages上では、ファイルパスがローカルとは異なるるため以下のように指定する必要があります。
-
-<link rel=”stylesheet” href=”https://username.github.io/project_name/https://fallscourt.github.io/846a/_static/alabaster.css" type=”text/css” />
-
-最終的には、以下のようにURL（絶対パス=https://username.github.io/dipository_name/css_file_name）を指定したら、CSSを読み込んでくれるようになりました。
-
-問題箇所
+ネットで調べたこと、その４
+-----------------------------
 
 
+うーん、いまいちだった。
+   Sphinxの html/css ディレクトリ _static の置き方しか答えてない。
 
-<link rel="stylesheet" href="https://kotaro666-dev.github.io/portfolio-demo/style.css"/
+.. toctree:: 
 
-何とかなったんだけど表示のお化粧がうまくいかない
-https://medium.com/@kotaro666_dev/github-pages%E3%81%ABcss%E3%81%8C%E5%85%A8%E3%81%8F%E5%8F%8D%E6%98%A0%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E5%95%8F%E9%A1%8C-af99015a4a82
+    asking2chatGPT_230903
+
+
+ネットで調べたこと、その３
+------------------------------
+
+SphinxとGitHub Pagesで技術ノートを公開しよう！
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    結果はOKと思う
+
+    https://d-tsuji.github.io/sphinx-sample/ 
+
+
+    @tutuz(Tsuji Daishiro) in フューチャー株式会社
+
+    https://qiita.com/tutuz/items/88a32d94d700b33dc3ea#github-pages-%E3%81%A8%E3%81%AE%E9%80%A3%E6%90%BA  
+
+    GitHi Pages は、デフォルトで JekyII でホスティングを行います。しかし、JekyII は Sphinx に対応していないため、 _static などにあるパスを読み取ることができません。対応として .nojekyll のディレクトリを作成する必要があります。手動で作成しても問題ないですが、今回は sphinx.ext.githubpages を用いて対応することができます。
+
+    **sphinx.ext.githubpages プラグイン** は GitHub Pages で公開するために、 .nojekyll ファイルをHTMLディレクトリ内に作成します。
+
+
+.. code-block:: 
+
+    ...
+
+    # -- General configuration ---------------------------------------------------
+
+    # Add any Sphinx extension module names here, as strings. They can be
+    # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+    # ones.
+    -extensions = ['sphinx.ext.mathjax', 'sphinx.ext.todo'
+    +extensions = ['sphinx.ext.mathjax', 'sphinx.ext.todo', 'sphinx.ext.githubpages'
+    ]
+
+    # Add any paths that contain templates here, relative to this directory.
+    templates_path = ['_templates']
+
+    ...
+
+
+
+    （ついでに）
+
+        以下にテーマごとのサンプルがあります。
+
+        https://sphinx-themes.org/
+
+        一番最初に紹介した Docker ドキュメント日本語化プロジェクト のテーマは 
+        
+        sphinx_rtd_theme 
+        
+        になっています。好みに合わせて選ぶことができます。
+
+
+ネットで調べたこと、その２
+------------------------------
+
+    https://github.com/richcat-dev/richcat/issues/104  
+   
+
+
+ネットで調べたこと、その１
+--------------------------------
+
+    Github pages not linking to CSS
+
+    Relative paths only work with server rendering, if you host on github pages that would be static hosting and thus would need to provide an absolute path starting with http:
+
+    GitHub PagesでSphinxにCSSが適用されない!!
+
+    GitHub Pagesにアップロードした時点で、サーバーとローカルではcssへのファイルパスを変更する必要があります。
+
+    例えば、ローカル上のindex.htmlで以下のようにcssのファイルパスを指定し、ブラウザで開くと、一見、index.htmlに_static/asabaster.cssが適用されているように見えます。
+
+    <link rel=”stylesheet” href=”_static/alabaster.css” type=”text/css” />
+
+    しかし、これをこのままGithub Pagesにアップロードすると適用されません。
+
+    Githube Pages上では、ファイルパスがローカルとは異なるるため以下のように指定する必要があります。
+
+    <link rel=”stylesheet” href=”https://username.github.io/project_name/_static/alabaster.css" type=”text/css” />
+
+    最終的には、以下のようにURL（絶対パス=https://username.github.io/dipository_name/css_file_name）を指定したら、CSSを読み込んでくれるようになりました。
+
+    問題箇所
+
+
+
+    <link rel="stylesheet" href="https://kotaro666-dev.github.io/portfolio-demo/style.css"/
+
+（過去ログ） 何とかなったんだけど表示のお化粧がうまくいかない
+
+    https://medium.com/@kotaro666_dev/github-pages%E3%81%ABcss%E3%81%8C%E5%85%A8%E3%81%8F%E5%8F%8D%E6%98%A0%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%95%E3%82%8C%E3%81%A6%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F-%E5%95%8F%E9%A1%8C-af99015a4a82
 
 
 
