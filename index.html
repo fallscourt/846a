@@ -43,20 +43,31 @@
 <section id="id2">
 <h2>メモメモ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <section id="id3">
-<h3>練習用に<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>最後にこうなればいいなとう目標<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>練習用に、 フォルスコート（Fallscourt）という アカウントを GitHubに登録した {230902} 。</p>
 <p><a class="reference external" href="https://fallscourt.github.io/846a/">https://fallscourt.github.io/846a/</a></p>
 <p>github.com/fallscourt/846a</p>
 <p>PID = komae237</p>
 <p>fallscourt/846a</p>
+<p><strong>cssが認識されない、いまいち。。。</strong></p>
 </section>
 <section id="id4">
 <h3>どうすればいいかどう直せばいいか<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 </section>
 <section id="id5">
-<h3>ネットで調べたこと、その４<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<h3>ネットで調べたこと、その５<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference external" href="https://nikkie-ftnext.hatenablog.com/entry/do-you-know-sphinx-ext-githubpages">https://nikkie-ftnext.hatenablog.com/entry/do-you-know-sphinx-ext-githubpages</a></p>
+<p>ええええ？？</p>
+<blockquote>
+<div><p>ビルドされたファイル（＝build/htmlの中身）一式をGitHub Pagesとして公開すると、CSSや画像にアクセスできません。
+アンダースコアで始まるファイルやディレクトリにアクセスできないのです。</p>
+<p>これはbuild/html直下に.nojekyllという空ファイルも合わせて置くことで解決します</p>
+</div></blockquote>
+</section>
+<section id="id6">
+<h3>ネットで調べたこと、その４<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="simple">
-<dt>うーん、いまいちだった。</dt><dd><p>Sphinxの html/css ディレクトリ _static の置き方しか答えてない。</p>
+<dt>うーん、これも、いまいちだった。</dt><dd><p>Sphinxの html/css ディレクトリ _static の置き方しか答えてない。</p>
 </dd>
 </dl>
 <div class="toctree-wrapper compound">
@@ -65,8 +76,8 @@
 </ul>
 </div>
 </section>
-<section id="id6">
-<h3>ネットで調べたこと、その３<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<section id="id7">
+<h3>ネットで調べたこと、その３<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <section id="sphinxgithub-pages">
 <h4>SphinxとGitHub Pagesで技術ノートを公開しよう！<a class="headerlink" href="#sphinxgithub-pages" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <blockquote>
@@ -77,47 +88,41 @@
 <p>GitHi Pages は、デフォルトで JekyII でホスティングを行います。しかし、JekyII は Sphinx に対応していないため、 _static などにあるパスを読み取ることができません。対応として .nojekyll のディレクトリを作成する必要があります。手動で作成しても問題ないですが、今回は sphinx.ext.githubpages を用いて対応することができます。</p>
 <p><strong>sphinx.ext.githubpages プラグイン</strong> は GitHub Pages で公開するために、 .nojekyll ファイルをHTMLディレクトリ内に作成します。</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>...
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
 
-# -- General configuration ---------------------------------------------------
+<span class="c1"># -- General configuration ---------------------------------------------------</span>
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom
-# ones.
--extensions = [&#39;sphinx.ext.mathjax&#39;, &#39;sphinx.ext.todo&#39;
-+extensions = [&#39;sphinx.ext.mathjax&#39;, &#39;sphinx.ext.todo&#39;, &#39;sphinx.ext.githubpages&#39;
-]
+<span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
+<span class="c1"># ones.</span>
+<span class="o">-</span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span> <span class="s1">&#39;sphinx.ext.todo&#39;</span>
+<span class="o">+</span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span> <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span> <span class="s1">&#39;sphinx.ext.githubpages&#39;</span>
+<span class="p">]</span>
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = [&#39;_templates&#39;]
+<span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
 
-...
-
-
-
-（ついでに）
-
-    以下にテーマごとのサンプルがあります。
-
-    https://sphinx-themes.org/
-
-    一番最初に紹介した Docker ドキュメント日本語化プロジェクト のテーマは
-
-    sphinx_rtd_theme
-
-    になっています。好みに合わせて選ぶことができます。
+<span class="o">...</span>
 </pre></div>
 </div>
+<p>（ついでに）</p>
+<blockquote>
+<div><p>以下にテーマごとのサンプルがあります。</p>
+<p><a class="reference external" href="https://sphinx-themes.org/">https://sphinx-themes.org/</a></p>
+<p>一番最初に紹介した Docker ドキュメント日本語化プロジェクト のテーマは</p>
+<p>sphinx_rtd_theme</p>
+<p>になっています。好みに合わせて選ぶことができます。</p>
+</div></blockquote>
 </section>
 </section>
-<section id="id7">
-<h3>ネットで調べたこと、その２<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<section id="id8">
+<h3>ネットで調べたこと、その２<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/richcat-dev/richcat/issues/104">https://github.com/richcat-dev/richcat/issues/104</a></p>
 </div></blockquote>
 </section>
-<section id="id8">
-<h3>ネットで調べたこと、その１<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<section id="id9">
+<h3>ネットで調べたこと、その１<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <blockquote>
 <div><p>Github pages not linking to CSS</p>
 <p>Relative paths only work with server rendering, if you host on github pages that would be static hosting and thus would need to provide an absolute path starting with http:</p>
@@ -138,8 +143,8 @@ templates_path = [&#39;_templates&#39;]
 </div></blockquote>
 </section>
 </section>
-<section id="id9">
-<h2>はじめに<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id10">
+<h2>はじめに<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>みなさま、このサイトを見ていただき、ありがとうございます。だんだん（民間の活動として）お金の流れる仕事ができるようになってきました。今後、迅速に、チームで分担して仕事しなければなりません。そこで、年齢の言った方には負担かもしれませんが（拒否感が在るかもしれませんが）、インターネットを最大限に活用します。</p>
 <p>情報の共有方法について、試行錯誤をしたいと希望します。</p>
 <p>ネットでは、いくつかの Cloud を用いたツールが有り、以下のようなものがあります。調査中です。</p>
@@ -149,8 +154,8 @@ templates_path = [&#39;_templates&#39;]
 </div>
 <p>調査しているシステムは以下の通り、順次増やします。</p>
 </section>
-<section id="id10">
-<h2>以下、調査、その０<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id11">
+<h2>以下、調査、その０<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <section id="github">
 <h3>Github<a class="headerlink" href="#github" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>いうまでもないですがコードを書くなら定番。</p>
@@ -160,8 +165,8 @@ templates_path = [&#39;_templates&#39;]
 <p><a class="reference external" href="https://github.com/features/copilot">https://github.com/features/copilot</a></p>
 </section>
 </section>
-<section id="id11">
-<h2>その１<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id12">
+<h2>その１<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chatGPT_230326.html">ちょっと、chatGPTに聞いてみた</a><ul>
@@ -186,8 +191,8 @@ templates_path = [&#39;_templates&#39;]
 </ul>
 </div>
 </section>
-<section id="id12">
-<h2>調査、その２<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<section id="id13">
+<h2>調査、その２<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <section id="mattermost">
 <h3>Mattermost<a class="headerlink" href="#mattermost" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <blockquote>
@@ -248,24 +253,25 @@ templates_path = [&#39;_templates&#39;]
     <ul>
 <li><a class="reference internal" href="#">ネットでチームプレイ</a><ul>
 <li><a class="reference internal" href="#id2">メモメモ</a><ul>
-<li><a class="reference internal" href="#id3">練習用に</a></li>
+<li><a class="reference internal" href="#id3">最後にこうなればいいなとう目標</a></li>
 <li><a class="reference internal" href="#id4">どうすればいいかどう直せばいいか</a></li>
-<li><a class="reference internal" href="#id5">ネットで調べたこと、その４</a></li>
-<li><a class="reference internal" href="#id6">ネットで調べたこと、その３</a><ul>
+<li><a class="reference internal" href="#id5">ネットで調べたこと、その５</a></li>
+<li><a class="reference internal" href="#id6">ネットで調べたこと、その４</a></li>
+<li><a class="reference internal" href="#id7">ネットで調べたこと、その３</a><ul>
 <li><a class="reference internal" href="#sphinxgithub-pages">SphinxとGitHub Pagesで技術ノートを公開しよう！</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id7">ネットで調べたこと、その２</a></li>
-<li><a class="reference internal" href="#id8">ネットで調べたこと、その１</a></li>
+<li><a class="reference internal" href="#id8">ネットで調べたこと、その２</a></li>
+<li><a class="reference internal" href="#id9">ネットで調べたこと、その１</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id9">はじめに</a></li>
-<li><a class="reference internal" href="#id10">以下、調査、その０</a><ul>
+<li><a class="reference internal" href="#id10">はじめに</a></li>
+<li><a class="reference internal" href="#id11">以下、調査、その０</a><ul>
 <li><a class="reference internal" href="#github">Github</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id11">その１</a></li>
-<li><a class="reference internal" href="#id12">調査、その２</a><ul>
+<li><a class="reference internal" href="#id12">その１</a></li>
+<li><a class="reference internal" href="#id13">調査、その２</a><ul>
 <li><a class="reference internal" href="#mattermost">Mattermost</a></li>
 <li><a class="reference internal" href="#conflurence">Conflurence</a></li>
 <li><a class="reference internal" href="#notion">Notion</a></li>

@@ -65,25 +65,39 @@
 <p>このようにすることで、プロジェクトのドキュメンテーションを簡単に管理し、共有できます。また、GitHubを使用することで、他のプロジェクトコードとドキュメンテーションを一元管理することができます。</p>
 <p>はい、もうひとつカーペットを捲ると（一段ほりさげると）、GitHub Pages をつかって、Sphinx でつくった htmlを公開しようとすると、GitHub Pagesのデフォールトだと、CSSを読み取ってくれないという問題があります。この問題について知っていますか？</p>
 <p>はい、GitHub PagesにおいてCSSが読み込まれない問題は、Sphinxで生成したHTMLドキュメントをGitHub Pagesで公開する際に一般的に発生することがあります。これは、リソースのパスがSphinxの出力とGitHub Pagesのデフォルトの設定と一致しないためです。この問題を解決するために、いくつかの方法があります。</p>
-<ol class="arabic">
-<li><p><strong>スタティックリソースのパスを修正する</strong>:
-- Sphinxのビルド設定にある`html_static_path`オプションを使用して、スタティックリソース（CSS、JavaScript、画像など）のパスを調整できます。これをリポジトリのルートに変更し、GitHub Pagesがそれらのファイルにアクセスできるようにします。</p>
-<p><code class="docutils literal notranslate"><span class="pre">`python</span>
-<span class="pre">#</span> <span class="pre">conf.py</span>
-<span class="pre">html_static_path</span> <span class="pre">=</span> <span class="pre">['_static']</span>
-<span class="pre">`</span></code></p>
+<ol class="arabic simple">
+<li><p><strong>スタティックリソースのパスを修正する</strong>:</p>
+<ul class="simple">
+<li><p>Sphinxのビルド設定にある`html_static_path`オプションを使用して、スタティックリソース（CSS、JavaScript、画像など）のパスを調整できます。これをリポジトリのルートに変更し、GitHub Pagesがそれらのファイルにアクセスできるようにします。</p></li>
+</ul>
+</li>
+</ol>
+<dl class="simple">
+<dt>::</dt><dd><p>python
+# conf.py
+html_static_path = ['_static']</p>
+</dd>
+</dl>
 <p>この設定はSphinxのビルド時に、<a href="#id1"><span class="problematic" id="id2">`</span></a>_static`ディレクトリ内のリソースを生成されたHTMLにコピーします。</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Base URLを設定する</strong>:</p>
+<ul class="simple">
+<li><p>Sphinxのビルド設定にある`html_baseurl`オプションを使用して、ドキュメントのベースURLを設定できます。これにより、リソースのパスが正しく生成されます。</p></li>
+</ul>
 </li>
-<li><p><strong>Base URLを設定する</strong>:
-- Sphinxのビルド設定にある`html_baseurl`オプションを使用して、ドキュメントのベースURLを設定できます。これにより、リソースのパスが正しく生成されます。</p>
-<p><code class="docutils literal notranslate"><span class="pre">`python</span>
-<span class="pre">#</span> <span class="pre">conf.py</span>
-<span class="pre">html_baseurl</span> <span class="pre">=</span> <span class="pre">'https://username.github.io/repo-name/'</span>
-<span class="pre">`</span></code></p>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+<span class="c1"># conf.py</span>
+<span class="n">html_baseurl</span> <span class="o">=</span> <span class="s1">&#39;https://username.github.io/repo-name/&#39;</span>
+</pre></div>
+</div>
 <p>ここで、<a href="#id3"><span class="problematic" id="id4">`</span></a>username`はGitHubのユーザー名、<a href="#id5"><span class="problematic" id="id6">`</span></a>repo-name`はリポジトリ名です。これにより、相対パスが正しく解決されます。</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>相対パスを使用する</strong>:</p>
+<ul class="simple">
+<li><p>ドキュメント内でCSSやリソースのパスを相対パスで指定することもできます。この方法を使用する場合、Sphinxで生成されたHTMLファイルとCSSファイルが同じディレクトリ内にあることを確認してください。</p></li>
+</ul>
 </li>
-<li><p><strong>相対パスを使用する</strong>:
-- ドキュメント内でCSSやリソースのパスを相対パスで指定することもできます。この方法を使用する場合、Sphinxで生成されたHTMLファイルとCSSファイルが同じディレクトリ内にあることを確認してください。</p></li>
 </ol>
 <p>これらの方法を使用すると、GitHub PagesでSphinxで生成したHTMLドキュメントのスタイルシートが正しく読み込まれるはずです。問題が解決しない場合、デバッグするためにブラウザの開発者ツールを使用してエラーメッセージを確認し、リソースのパスに問題がないかを確認することができます。</p>
 </section>
